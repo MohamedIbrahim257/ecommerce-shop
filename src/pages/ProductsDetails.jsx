@@ -19,7 +19,7 @@ export default function ProductsDetails() {
   const { title, price, amount, description, image } = Products;
 
   return (
-    <section className='pt-32 pb-12 lg:py-32  flex items-center' >
+    <section className='pt-32 pb-12 lg:py-32 flex items-center' >
       <div className="container mx-auto">
         <div className=' flex flex-col lg:flex-row items-center' >
           <div className=' flex flex-1 justify-center items-center mb-8 lg:mb-0' >
