@@ -23,7 +23,7 @@ export default function Products({ product }) {
                             </div>
                         </button>
                         <div>
-                            <Link className=' shadow-lg bg-white flex justify-center items-center p-3  w-12 h-12 my-1' ><BsEyeFill /></Link>
+                            <Link to={`ProductsDetails/${id}`} className=' shadow-lg bg-white flex justify-center items-center p-3  w-12 h-12 my-1' ><BsEyeFill /></Link>
                         </div>
 
                     </div>

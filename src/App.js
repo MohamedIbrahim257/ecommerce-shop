@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProductsDetails from './pages/ProductsDetails';
 import Sidebar from './components/Sidebar';
 
+
 function App() {
   return (
     <div>
