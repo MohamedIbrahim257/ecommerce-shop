@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io'
+import { useContext } from 'react'
+import { cartContext } from '../context/CartContext'
 
 export default function CartItem({ cart }) {
-    let { id, title, price, category, image, amount } = cart
+    let { id, title, price, category, image, amount  } = cart
+    let {removeProductsCart , increaseQty , decreaseQty} = useContext(cartContext)
     return (
 
         <div className='flex items-center gap-x-4 py-2 border-b  w-full border-gray-200 min-h-[150px] ' >
@@ -23,27 +26,25 @@ export default function CartItem({ cart }) {
                     </div>
 
                     <div>
-                        <div><IoMdClose className=' text-gray-500  hover:text-red-500 transition  duration-300 cursor-pointer'></IoMdClose></div>
+                        <div onClick={()=> removeProductsCart(id)} ><IoMdClose  className=' text-gray-500  hover:text-red-500 transition  duration-300 cursor-pointer'></IoMdClose></div>
                     </div>
                 </div>
                 <div className='px-3 flex  gap-x-2 h-[36px]' >
                     <div className=' flex flex-1 max-w-[100px]  border items-center h-full font-medium' >
-                        <div className=' flex-1 flex justify-center items-center h-full cursor-pointer' >
+                        <div onClick={()=> decreaseQty(id)} className=' flex-1 flex justify-center items-center h-full cursor-pointer' >
                             <IoMdRemove></IoMdRemove>
                         </div>
                         <div className=' h-full flex justify-center items-center px-2 ' >{amount}</div>
-                        <div className=' flex-1 flex justify-center items-center  h-full cursor-pointer' >
+                        <div onClick={()=> increaseQty(id)} className=' flex-1 flex justify-center items-center  h-full cursor-pointer' >
                             <IoMdAdd></IoMdAdd>
                         </div>
                     </div>
-                    <div className=' flex-1 justify-around flex  items-center' >$ {price}</div>
+                    <div className=' flex-1 justify-around flex  items-center text-gray-500' >$ {price}</div>
                     <div className=' flex-1 justify-end flex  items-center' >$ {`${parseFloat(price * amount).toFixed(2)}`}</div>
 
                 </div>
 
             </div>
-
-
 
         </div>
 

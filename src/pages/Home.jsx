@@ -12,9 +12,9 @@ export default function Home() {
 
 
     return (
-        <section className=' py-16' >
-            <div className='container mx-auto' >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] mx-w-sm mx-auto md:max-none md:mx-0">
+        <section className='py-16' >
+            <div className='container mx-auto px-4 ' >
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] ">
                 {filterProducts.map((product) => <Products key={product.id} product={product} ></Products> )}
                 </div>
           

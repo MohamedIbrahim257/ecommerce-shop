@@ -11,9 +11,6 @@ export default function SidebarProvider({ children }) {
         setIsOpen(false)
 
     }
-
-
-
     return (
         <sidebarContext.Provider value={{ isOpen, setIsOpen, handleClosing }} >
             {children}
